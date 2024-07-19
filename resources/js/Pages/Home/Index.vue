@@ -1,6 +1,9 @@
 <template>
     <Layout>
-        <Head title="Home page" />
+        <Head>
+          <title>Your page title</title>
+          <meta name="description" content="Your page description">
+        </Head>
         <h2>Hello, world!</h2>
         <p>Welcome to your first Inertia app.</p>
         <p>{{ name }} - {{ age }}</p>

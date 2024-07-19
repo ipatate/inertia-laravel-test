@@ -32,11 +32,35 @@ const _sfc_main = {
       _push(ssrRenderComponent(Layout, _attrs, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(ssrRenderComponent(unref(Head), { title: "Home page" }, null, _parent2, _scopeId));
+            _push2(ssrRenderComponent(unref(Head), null, {
+              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  _push3(`<title${_scopeId2}>Your page title</title><meta name="description" content="Your page description"${_scopeId2}>`);
+                } else {
+                  return [
+                    createVNode("title", null, "Your page title"),
+                    createVNode("meta", {
+                      name: "description",
+                      content: "Your page description"
+                    })
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
             _push2(`<h2${_scopeId}>Hello, world!</h2><p${_scopeId}>Welcome to your first Inertia app.</p><p${_scopeId}>${ssrInterpolate(__props.name)} - ${ssrInterpolate(__props.age)}</p>`);
           } else {
             return [
-              createVNode(unref(Head), { title: "Home page" }),
+              createVNode(unref(Head), null, {
+                default: withCtx(() => [
+                  createVNode("title", null, "Your page title"),
+                  createVNode("meta", {
+                    name: "description",
+                    content: "Your page description"
+                  })
+                ]),
+                _: 1
+              }),
               createVNode("h2", null, "Hello, world!"),
               createVNode("p", null, "Welcome to your first Inertia app."),
               createVNode("p", null, toDisplayString(__props.name) + " - " + toDisplayString(__props.age), 1)
